@@ -1,0 +1,107 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="p-fluid">
+  <div class="custom-grid">
+    <div class="p-col-12 p-md-6">
+      <div class="p-field">
+        <label for="assignmentName">Name</label>
+        <input
+          id="assignmentName"
+          type="text"
+          pInputText
+          formControlName="assignmentName"
+          class="form-control"
+        />
+        <div *ngIf="form.get('assignmentName')?.hasError('required')">
+          <small class="p-error">Name is required.</small>
+        </div>
+      </div>
+    </div>
+    <div class="p-col-12 p-md-6">
+      <div class="p-field">
+        <label for="description">description</label>
+        <input
+          id="description"
+          type="text"
+          pInputText
+          formControlName="description"
+          class="form-control"
+        />
+        <div *ngIf="form.get('description')?.hasError('required')">
+          <small class="p-error">description is required.</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-col-12 p-md-6">
+      <div class="p-field">
+        <label for="startDate">Start Date</label>
+        <p-calendar
+          id="startDate"
+          formControlName="startDate"
+          class="form-control"
+          dateFormat="dd/mm/yy"
+        ></p-calendar>
+        <div *ngIf="form.get('startDate')?.hasError('required')">
+          <small class="p-error">Start Date is required.</small>
+        </div>
+      </div>
+    </div>
+    <div class="p-col-12 p-md-6">
+      <div class="p-field">
+        <label for="endDate">End Date</label>
+        <p-calendar
+          id="endDate"
+          formControlName="endDate"
+          class="form-control"
+          dateFormat="dd/mm/yy"
+        ></p-calendar>
+        <div *ngIf="form.get('endDate')?.hasError('required')">
+          <small class="p-error">End Date is required.</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-col-12 p-md-6">
+      <div class="p-field">
+        <label for="assignmentTypeId">Type</label>
+
+        <p-dropdown
+          id="assignmentTypeId"
+          formControlName="assignmentTypeId"
+          [options]="typeOptions"
+          optionValue="assignmentTypeId"
+          optionLabel="assignmentTypeName"
+          placeholder="Select an option"
+        ></p-dropdown>
+
+        <div *ngIf="form.get('assignmentTypeId')?.hasError('required')">
+          <small class="p-error">Type is required.</small>
+        </div>
+      </div>
+    </div>
+    <div class="p-col-12 p-md-6">
+      <div class="p-field">
+        <label for="isPeriodic">Assignment is periodic?</label>
+        <br />
+        <p-checkbox
+          id="isPeriodic"
+          formControlName="isPeriodic"
+          class="form-control"
+          [binary]="true"
+        ></p-checkbox>
+        <div *ngIf="form.get('isPeriodic')?.hasError('required')">
+          <small class="p-error">Periodic is required.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-field">
+    <button
+      type="submit"
+      pButton
+      label="Submit"
+      [disabled]="form.invalid"
+      class="p-button-primary"
+    ></button>
+  </div>
+</form>

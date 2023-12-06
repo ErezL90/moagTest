@@ -1,0 +1,15 @@
+.custom-grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .custom-grid > .p-col-12 {
+    width: 100%;
+  }
+  
+  .custom-grid > .p-col-12.p-md-6 {
+    width: 48%;
+    padding-left: 2%;
+    padding-bottom: 2%;
+  }
+

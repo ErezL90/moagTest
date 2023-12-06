@@ -1,0 +1,129 @@
+<p-table
+  [value]="assignmentsRes"
+  [scrollable]="true"
+  scrollHeight="76vh"
+  [paginator]="true"
+  [rows]="request.rows"
+  [first]="request.first"
+  [lazy]="true"
+  (onLazyLoad)="loadAssignments($event)"
+  [totalRecords]="totalRecords"
+  [customSort]="true"
+>
+  <ng-template pTemplate="caption">
+    <div class="flex align-items-center justify-content-between">
+      <p-button
+        class="add-assignment-button"
+        label="Add new assignment"
+        [text]="true"
+        [raised]="true"
+        (onClick)="addAssignment()"
+      ></p-button>
+      <h2>Assignments</h2>
+
+      <div>
+        <p-button
+          class="add-assignment-button"
+          label={{archiveProp}}
+          [text]="true"
+          [raised]="true"
+          (onClick)="toggleArchive()"
+        ></p-button>
+        <p-button
+          class="add-assignment-button"
+          label="Save all assignments checked as completed"
+          [text]="true"
+          [raised]="true"
+          (onClick)="completeAssignment()"
+        ></p-button>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Id</th>
+      <th pSortableColumn="assignmentName">
+        Name<p-sortIcon field="assignmentName"></p-sortIcon>
+      </th>
+
+      <th pSortableColumn="description">
+        Description<p-sortIcon field="description"></p-sortIcon>
+      </th>
+      <th>Type</th>
+      <th pSortableColumn="startDate">
+        Start Date<p-sortIcon field="startDate"></p-sortIcon>
+      </th>
+      <th pSortableColumn="endDate">
+        End Date<p-sortIcon field="endDate"></p-sortIcon>
+      </th>
+      <th>Periodic</th>
+      <th>Archive</th>
+      <th>Completed</th>
+      <th>Operations</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-assignment>
+    <tr>
+      <td>{{ assignment.assignmentId }}</td>
+      <td>{{ assignment.assignmentName }}</td>
+      <td>{{ assignment.description }}</td>
+      <td>
+        {{ assignment.assignmentTypeId | assignmentType : assignmentsTypes }}
+      </td>
+      <td>{{ assignment.startDate | date : "yyyy-MM-dd" }}</td>
+      <td>{{ assignment.endDate | date : "yyyy-MM-dd" }}</td>
+      <td>
+        <p-tag
+          [severity]="assignment.isPeriodic ? 'success' : 'warning'"
+          [value]="assignment.isPeriodic ? yesAns : noAns"
+        >
+        </p-tag>
+        <p-button
+          icon="pi pi-check"
+          [rounded]="true"
+          [text]="true"
+          [raised]="true"
+          severity="danger "
+          (onClick)="
+            periodicAssignment(assignment?.isPeriodic, assignment?.assignmentId)
+          "
+        ></p-button>
+      </td>
+
+      <td>
+        <p-tag
+          [severity]="assignment.isArchive ? 'success' : 'warning'"
+          [value]="assignment.isArchive ? yesAns : noAns"
+        >
+        </p-tag>
+        <p-button
+          icon="pi pi-history"
+          [rounded]="true"
+          [text]="true"
+          [raised]="true"
+          severity="danger "
+          (onClick)="
+            archiveAssignment(assignment?.isArchive, assignment?.assignmentId)
+          "
+        ></p-button>
+      </td>
+      <td>
+        <p-checkbox
+          [(ngModel)]="assignment.isCompleted"
+          [binary]="true"
+          (onChange)="addtolocalComplete($event, assignment)"
+        ></p-checkbox>
+      </td>
+
+      <td>
+        <p-button
+          icon="pi pi-trash"
+          label="Delete"
+          [rounded]="true"
+          severity="danger"
+          (onClick)="deleteAssignment(assignment?.assignmentId)"
+        ></p-button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

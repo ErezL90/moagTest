@@ -1,0 +1,156 @@
+{
+  "users": [
+    {
+      "fullName": "Erez Levi",
+      "email": "Erezldj@gmail.com",
+      "password": "1234",
+      "id": 1
+    }
+  ],
+  "assignments": [
+    {
+      "id": 1,
+      "AssignmentName": "walla",
+      "Description": "walla11",
+      "StartDate": "12/02/2023",
+      "EndDate": "12/08/2024",
+      "IsPeriodic": true,
+      "IsCompleted": true,
+      "IsArchive": true,
+      "User": "erez",
+      "AssignmentType": "home"
+    },
+    {
+      "id": 2,
+      "AssignmentName": "walla2",
+      "Description": "walla22",
+      "StartDate": "15/02/2023",
+      "EndDate": "12/10/2024",
+      "IsPeriodic": true,
+      "IsCompleted": false,
+      "IsArchive": true,
+      "User": "erez2",
+      "AssignmentType": "home4"
+    },
+    {
+      "id": 3,
+      "AssignmentName": "walla3",
+      "Description": "walla33",
+      "StartDate": "12/06/2023",
+      "EndDate": "14/09/2023",
+      "IsPeriodic": false,
+      "IsCompleted": false,
+      "IsArchive": false,
+      "User": "erez3",
+      "AssignmentType": "home"
+    },
+    {
+      "id": 4,
+      "AssignmentName": "walla4",
+      "Description": "walla44",
+      "StartDate": "12/02/2024",
+      "EndDate": "18/08/2023",
+      "IsPeriodic": false,
+      "IsCompleted": false,
+      "IsArchive": false,
+      "User": "erez2",
+      "AssignmentType": "home5"
+    },
+    {
+      "id": 5,
+      "AssignmentName": "walla5",
+      "Description": "walla55",
+      "StartDate": "12/08/2023",
+      "EndDate": "16/08/2023",
+      "IsPeriodic": true,
+      "IsCompleted": false,
+      "IsArchive": false,
+      "User": "erez1",
+      "AssignmentType": "home4"
+    },
+    {
+      "id": 6,
+      "AssignmentName": "walla6",
+      "Description": "walla66",
+      "StartDate": "12/01/2023",
+      "EndDate": "11/08/2024",
+      "IsPeriodic": true,
+      "IsCompleted": true,
+      "IsArchive": true,
+      "User": "erez",
+      "AssignmentType": "home"
+    },
+    {
+      "id": 7,
+      "AssignmentName": "walla7",
+      "Description": "walla77",
+      "StartDate": "12/05/2023",
+      "EndDate": "12/08/2023",
+      "IsPeriodic": true,
+      "IsCompleted": false,
+      "IsArchive": false,
+      "User": "erez",
+      "AssignmentType": "home5"
+    },
+    {
+      "id": 8,
+      "AssignmentName": "walla8",
+      "Description": "walla88",
+      "StartDate": "12/06/2023",
+      "EndDate": "13/08/2023",
+      "IsPeriodic": false,
+      "IsCompleted": true,
+      "IsArchive": false,
+      "User": "erez",
+      "AssignmentType": "home"
+    },
+    {
+      "id": 9,
+      "AssignmentName": "walla9",
+      "Description": "walla99",
+      "StartDate": "12/02/2024",
+      "EndDate": "12/08/2024",
+      "IsPeriodic": true,
+      "IsCompleted": true,
+      "IsArchive": false,
+      "User": "erez",
+      "AssignmentType": "home3"
+    },
+    {
+      "AssignmentName": "dddd",
+      "Description": "ddfdfd",
+      "StartDate": "",
+      "EndDate": "",
+      "AssignmentType": "ddd",
+      "User": "des",
+      "IsArchive": false,
+      "IsCompleted": false,
+      "IsPeriodic": false,
+      "id": 10
+    },
+    {
+      "AssignmentName": "dddd",
+      "Description": "ddfdfd",
+      "StartDate": "",
+      "EndDate": "",
+      "AssignmentType": "ddd",
+      "User": "des",
+      "IsArchive": false,
+      "IsCompleted": false,
+      "IsPeriodic": false,
+      "id": 11
+    },
+    {
+      "AssignmentName": "dogly",
+      "Description": "my doglu",
+      "AssignmentType": "value2",
+      "StartDate": "12/12/23",
+      "EndDate": "12/12/23",
+      "IsPeriodic": true,
+      "User": "Erezldj@gmail.com",
+      "IsArchive": false,
+      "IsCompleted": false,
+      "id": 12
+    }
+  ]
+}
